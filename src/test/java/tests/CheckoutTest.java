@@ -6,7 +6,7 @@ import static org.testng.Assert.assertEquals;
 
 public class CheckoutTest extends BaseTest {
 
-    @Test
+    @Test(description = "Checkout: Overview page opens after entering valid data")
     public void successfulCheckout() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -17,7 +17,7 @@ public class CheckoutTest extends BaseTest {
         assertEquals(checkoutOverviewPage.getTitle(), "Checkout: Overview", "Wrong page opened after continuing");
     }
 
-    @Test
+    @Test(description = "Empty values in checkout - error message")
     public void allEmptyFields() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -28,7 +28,7 @@ public class CheckoutTest extends BaseTest {
         assertEquals(checkoutPage.getError(),"Error: First Name is required");
     }
 
-    @Test
+    @Test(description = "Empty last name in checkout - error message")
     public void emptyLastName() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -39,7 +39,7 @@ public class CheckoutTest extends BaseTest {
         assertEquals(checkoutPage.getError(),"Error: Last Name is required");
     }
 
-    @Test
+    @Test(description = "empty postal code in checkout - error message")
     public void emptyPostalCode() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");

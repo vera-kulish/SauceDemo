@@ -6,7 +6,7 @@ import static org.testng.Assert.assertEquals;
 
 public class ProductsTest extends BaseTest {
 
-    @Test
+    @Test(description = "Add item to the cart")
     public void addToCart() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
@@ -16,7 +16,7 @@ public class ProductsTest extends BaseTest {
         assertEquals(cartPage.getItemPrice(), "$9.99");
     }
 
-    @Test
+    @Test(description = "Remove item from the cart (Products page)")
     public void removeFromCart() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");

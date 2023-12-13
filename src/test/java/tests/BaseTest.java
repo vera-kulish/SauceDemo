@@ -44,6 +44,7 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true, description = "Close browser")
     public void close() {
-        driver.quit();
+        if(driver != null)
+            driver.quit();
     }
 }

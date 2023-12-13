@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.*;
 import pages.*;
 
@@ -31,6 +32,9 @@ public class BaseTest {
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--headless");
+            driver = new FirefoxDriver(options);
             driver = new FirefoxDriver();
         }
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

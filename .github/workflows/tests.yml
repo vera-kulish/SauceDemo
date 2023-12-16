@@ -34,4 +34,4 @@ jobs:
     - name: Run tests
       run: mvn clean test
     - name: Run tests firefox
-      run: mvn clean test -DsuiteXmlFile='src/test/resources/CrossBrowser.xml'
+      run: mvn clean test

@@ -1,8 +1,10 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class CartPage extends BasePage {
 
     private final By ITEM_NAME = By.cssSelector(".inventory_item_name");
@@ -16,6 +18,7 @@ public class CartPage extends BasePage {
     }
 
     public void open() {
+        log.info("Open cart page");
         driver.get(BASE_URL + "cart.html");
     }
 
@@ -28,6 +31,7 @@ public class CartPage extends BasePage {
     }
 
     public void removeFromCart(String itemName) {
+        log.info("Removing item '{}' from the cart", itemName);
         By removeButton = By.xpath(String.format(REMOVE_FROM_CART_PATTERN, itemName));
         driver.findElement(removeButton).click();
     }
@@ -37,6 +41,7 @@ public class CartPage extends BasePage {
     }
 
     public void goToCheckout() {
+        log.info("Go to checkout");
         driver.findElement(CHECKOUT).click();
     }
 }

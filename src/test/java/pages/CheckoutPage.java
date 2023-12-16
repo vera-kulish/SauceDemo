@@ -1,8 +1,10 @@
 package pages;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+@Log4j2
 public class CheckoutPage extends BasePage {
 
     private final By TITLE = By.cssSelector(".title");
@@ -21,6 +23,7 @@ public class CheckoutPage extends BasePage {
     }
 
     public void fillDataAndContinue(String firstName, String lastName, String postalCode) {
+        log.info("Fill checkout data and continue");
         driver.findElement(FIRST_NAME).sendKeys(firstName);
         driver.findElement(LAST_NAME).sendKeys(lastName);
         driver.findElement(POSTAL_CODE).sendKeys(postalCode);

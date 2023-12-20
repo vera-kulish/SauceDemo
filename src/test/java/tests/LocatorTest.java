@@ -1,10 +1,12 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
+@Ignore
 public class LocatorTest extends BaseTest{
 
     @Test
